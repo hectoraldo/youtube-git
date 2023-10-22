@@ -1,0 +1,91 @@
+ # curso de Git uso de comandos
+
+> git --version
+> git config --global user.name "Nombre de Usuario"
+> git config --global user.email "email"
+> git config --global user.ul "true"
+> git config --list
+
+#Asignando visual studio code como editor de configuracion de git
+
+> git config --global core.editor "code --wait" #aqui si trabajas en atom o sublimetext debes de poner atom en lugar de code 
+> git config --global -e
+
+# Para estanarizar los saldos de linea en windows
+
+> git config --global core.autocrlf "true"
+
+# Para estandarizar los saldos de linea en linux/mac
+
+> git config --global core.autocrlf input
+
+# ver todas las opciones en la configuracion en la termina
+
+>git config -h
+
+# ver todas las opciones de la configuracion en el navegador
+
+> git help config
+
+> git help config #using this command is open a html file that explain how the commands work
+
+
+<<<<<<<<<<< Como Inizializar Git en un directorio Local >>>>>>>>>>>>>>>>>>>
+
+ejemplo:
+> mkdir carpeta 
+>cd carpeta
+>touch Readme.md 
+>touch .gitgnore
+>git init
+
+>mkdir youtube-git
+>cd youtube-git
+>touch README.md  
+>touch .gitignore
+>git init # Para inicializar el git
+>code . #Para abrir la carpeta en Visual Studio Code
+
+<<<<<<<<<<<<<<<<< FLUJO BASICO >>>>>>>>>>>>
+
+El flujo de Git, consta de tres estados locales, es decir en la computadora donde se esta trabajando y uno mas de forma remote cuando accedemos al codigo centralizado en plataformas como GitHub, Gitlab, Bitbucket, etc. 
+
+Dichos estados son modified, staged, committed y remote. A cada uno de ellos le corresponde un area de trabajo:
+1. Working Directory: Es el area correspondiente al estado modified y es la carpeta local de tu  computadora donde almacenas los archivos de tu proyecto. 
+
+2. Stagin Area: Es el area correspondiente al estado staged tambien se le llama index por que es el area donde git ideza y agrega los cambios realizados en los archivos previos a compremeterlos en su registo. 
+
+3. Local Repository: Es el area correspondiente al estado committed, donde los cambios ya se han registrado en el repositorio de git tambien se le llama HEAD por que indica en que cambio se encuentra el puntero del repositorio. 
+
+4. Remote Repository: Es el area correspondien al estado remote y es el directorio remoto donde alamacenamos los archivos del proyecto en alguna plataforma web como GitHub, GitLab, BitBuket. Git denomina origin al reapositorio remoto. 
+
+# agregar los cambios de un archivo al staged
+>git add archivo/directorio
+
+# agregar todos los cambios de todos los archivos al staged
+>git add .
+
+# los cambios son comprometidos en el repositorio
+# debes escribir el mensaje del cambio
+# cuando se abra el archivo de configuracion 
+# al terminar guarda el cierra el archivo
+# para que los cambios tengan efecto
+
+>git commit
+
+# es un shortcut del comando anterior 
+# escribes y confirmas el mensaje del cambio en un solo paso 
+
+>git commit -m "mensaje descriptivo del cambio"
+
+# se agrega el origen remoto de tu repositorio de GitHub
+>git remote add https://github.com/usuario/repositorio.Git
+ 
+# la primera vez que vinculamos el repositorio remoto con el local
+>git push -u origin master
+
+# para las subsecuentes actualizaciones, sino cambias de tama
+>git push
+
+# para descargar los cambios del repositorio remoto al local
+>git pull
